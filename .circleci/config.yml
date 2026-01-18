@@ -30,7 +30,7 @@ jobs:
       - run:
           name: "Access my server"
           command: |
-            ssh kendeeadmin@20.234.214.19 << 'EOF'
+            ssh kendeeadmin@20.234.214.19 \<< 'EOF'
               cd /home/kendeeadmin/KendeeCICD/kendee
               git pull
               sudo systemctl restart goapp
