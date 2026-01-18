@@ -24,7 +24,6 @@ jobs:
       - run:
           name: "Access my server"
           command: |
-            git checkout circleci-project-setup
             ssh kendeeadmin@20.234.214.19 << 'EOF'
               cd /home/kendeeadmin/KendeeCICD/kendee
               git pull
