@@ -29,12 +29,12 @@ jobs:
             ssh-keyscan -H 20.234.214.19 >> ~/.ssh/known_hosts
       - run:
           name: "Access my server"
-          command: ssh kendeeadmin@20.234.214.19 "echo OK && whoami && uptime"
-            # ssh kendeeadmin@20.234.214.19 \<< 'EOF'
-            #   cd /home/kendeeadmin/KendeeCICD/kendee
-            #   git pull
-            #   sudo systemctl restart goapp
-            # EOF
+          command: |
+            ssh kendeeadmin@20.234.214.19 \<< 'EOF'
+              cd /home/kendeeadmin/KendeeCICD/kendee
+              git pull
+              sudo systemctl restart goapp
+            EOF
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
