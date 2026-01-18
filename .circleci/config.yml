@@ -24,11 +24,10 @@ jobs:
       - run:
           name: "Access my server"
           command: |
-            ssh kendeeadmin@20.234.214.19 << 'EOF'
+            ssh kendeeadmin@20.234.214.19
               cd /home/kendeeadmin/KendeeCICD/kendee
               git pull
               sudo systemctl restart goapp
-            EOF
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
