@@ -20,7 +20,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - SHA256:r4yihU9ZBvI7d2arYxwj7Mrz9/jkw39TmxxYSOcysPU
+            - SHA256:PovnX6tlqeno4nBZ9nK0e1BaL/qBSWDcz5yiSeWBnHU
 
       - run:
           name: Trust SSH host
