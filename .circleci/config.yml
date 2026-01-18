@@ -21,13 +21,20 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - SHA256:r4yihU9ZBvI7d2arYxwj7Mrz9/jkw39TmxxYSOcysPU
+
+      - run:
+          name: Trust SSH host
+          command: |
+            mkdir -p ~/.ssh
+            ssh-keyscan -H 20.234.214.19 >> ~/.ssh/known_hosts
       - run:
           name: "Access my server"
           command: |
-            ssh kendeeadmin@20.234.214.19
+            ssh kendeeadmin@20.234.214.19 << 'EOF'
               cd /home/kendeeadmin/KendeeCICD/kendee
               git pull
               sudo systemctl restart goapp
+            EOF
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
